@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// Time - O(N)
 int reverse(int n){
     int reverse = 0;
     while(n>0){

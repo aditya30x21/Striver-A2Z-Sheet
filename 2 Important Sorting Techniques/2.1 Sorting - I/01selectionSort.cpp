@@ -1,37 +1,54 @@
 #include <iostream>
 using namespace std;
 
-void selectionSort(int *arr, int n){
-    for(int i = 0;i<n-1;i++){
-        int min = i;
-        for(int j = i+1;j<n;j++){
-            if(arr[j] < arr[min]){
-                swap(arr[j],arr[min]);
+// Time - O(n^2)
+// Space - O(1)
+
+void selectionSort(int arr[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int min = arr[i], minIndex = i;
+
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[j] < min)
+            {
+                min = arr[j];
+                minIndex = j;
             }
+            cout << min << endl; //for checking minimum step by step
         }
+
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+
+        for (int i = 0; i < n; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout << endl;  //To see step by step working
     }
 }
 
-void printArray(int *arr, int n){
-    for(int i = 0;i<n;i++){
-        cout<<arr[i]<<' ';
-    }
-    cout<<endl;
-}
-
-int main(){
+int main()
+{
     int n;
-    cin>>n;
-    
-    int *arr = new int[n];
+    cin >> n;
 
-    for(int i = 0;i<n;i++){
-        cin>>arr[i];
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
     }
 
-    selectionSort(arr,n);
-    printArray(arr,n);
+    selectionSort(arr, n);
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
 
-    delete []arr;
     return 0;
 }

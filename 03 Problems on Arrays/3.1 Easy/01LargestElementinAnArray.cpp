@@ -7,7 +7,7 @@ int largestInArrayApproach1(int *arr, int n)
 {
     /*
     Sort the array using inbuilt sort function and return arr[n-1]
-    Time - O(NlogN)
+    Time - O(N*logN)
     Space - O(1)
     */
     // Approach 1

@@ -20,7 +20,7 @@ int largestInArrayApproach2(int *arr, int n)
     /*
     Keep an max element set to INT_MIN and update it after every iteration.
     Time - O(n)
-    Space - O(n)
+    Space - O(1)
     */
     // Approach 2
     int max = INT_MIN;
